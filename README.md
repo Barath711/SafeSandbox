@@ -101,6 +101,7 @@ hash utilities, string extractors, IOC parsers, and rule scanners.
 - **Automatic findings panel** — appears when analysis results are available
 - **Help + Themes** — keyboard reference and multiple light/dark appearances
 - **Native desktop window** — PyQt6 WebEngine shell with no browser address bar
+- **90% desktop zoom** — slightly wider working view than the browser default
 - **Animated launch card** — matching SafeSandbox startup experience
 - **Fullscreen by default** — maximized workspace on launch
 
@@ -108,13 +109,15 @@ hash utilities, string extractors, IOC parsers, and rule scanners.
 
 ## 🚀 Quick Start
 
-### 1. Keep the application files together
+### 1. Download the standalone desktop file
 
 ```text
 SafeSandbox/
-├── SafeSandbox_v2.pyw
-└── SafeSandbox_v2.html
+└── SafeSandbox_v2.pyw
 ```
+
+The complete interface and analysis engine are embedded inside the `.pyw`.
+`SafeSandbox_v2.html` is not required beside it.
 
 ### 2. Install dependencies
 
@@ -133,8 +136,9 @@ pythonw SafeSandbox_v2.pyw
 
 ### Browser-only option
 
-Double-click `SafeSandbox_v2.html` to open the same workspace directly in a
-modern browser. Python is not required for the browser-only option.
+`SafeSandbox_v2.html` is also provided as an optional browser edition.
+Double-click it to open the workspace directly in a modern browser. Python is
+not required for the browser-only option.
 
 ---
 
@@ -205,12 +209,13 @@ modern browser. Python is not required for the browser-only option.
 
 ```text
 SafeSandbox/
-├── SafeSandbox_v2.pyw     # Native desktop launcher
-├── SafeSandbox_v2.html    # Analysis engine and interface
+├── SafeSandbox_v2.pyw     # Standalone desktop application
+├── SafeSandbox_v2.html    # Optional browser edition
 └── README.md              # Setup and usage guide
 ```
 
-The `.pyw` and `.html` files must remain in the same folder.
+The desktop `.pyw` works by itself. It extracts its embedded workspace into a
+temporary runtime directory and removes that directory when the app closes.
 
 ---
 
